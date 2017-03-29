@@ -1,0 +1,116 @@
+<section class="{{ global.prefix }}-m-articles-testimonials">
+  <div class="container">
+    <div class="page-content">
+      {{#each articles }}
+        <div class="content">
+          <div class="row">
+            {{#equal this.atRight true }}
+              <article>
+                <div class="col-xs-12 col-sm-5 col-sm-push-7 col-md-5 col-md-push-7 img-wrapper">
+                  <img class="image-content img-responsive _right-img" src= {{ ../this.imgSrc }} >
+                </div>
+                <div class="col-xs-12 col-sm-7 col-sm-pull-5 col-md-7 col-md-pull-5 _reset-position">
+
+                  <header class="text-content sr-anim">
+                    <h2 class="title" > {{ ../this.title }} </h2>
+                    <h4 class="sub-title">
+                      {{{ ../this.subTitle }}}
+                      <br class='visible-xs-inline-block'>
+                      <a href="mailto:{{ ../this.email }}">
+                        <img class="icon-envelope" src="/images/icon-envelope-testimony.svg">
+                      </a>
+                    </h4>
+                  </header>
+
+                  <section class="description sr-anim">
+                    <p class="title-description">{{ ../this.titleDescription }}</p>
+                    {{#each ../this.descriptionTerms }}
+                      <div class="terms">
+                        <p class="terms-title">{{ this.termsTitle }}</p>
+                        <p class="terms-text">{{{ this.termsText }}}</p>
+                      </div>
+                    {{/each}}
+                  </section>
+
+                  <section class="testimony visible-md-block visible-lg-block">
+                    <p>
+                      <span>&ldquo;</span>
+                      {{{  ../this.testimony }}}
+                      <span>&rdquo;</span>
+                    </p>
+                  </section>
+
+                </div>
+
+                <div class="col-xs-12 visible-xs-block visible-sm-block _reset-position">
+
+                  <section class="testimony sr-anim">
+                    <p>
+                      <span>&ldquo;</span>
+                      {{{  ../this.testimony }}}
+                      <span>&rdquo;</span>
+                    </p>
+                  </section>
+
+                </div>
+
+              </article>
+            {{else}}
+              <article>
+                <div class="col-xs-12 col-sm-5 col-md-5 img-wrapper">
+                  <img class="image-content img-responsive" src= {{ ../this.imgSrc }} >
+                </div>
+                <div class="col-xs-12 col-sm-7 col-md-7 _reset-position">
+
+                  <header class="text-content sr-anim">
+                    <h2 class="title" > {{ ../this.title }} </h2>
+                    <h4 class="sub-title">
+                      {{{ ../this.subTitle }}}
+                      <br class='visible-xs-inline-block'>
+                      <a href="mailto:{{ ../this.email }}">
+                        <img class="icon-envelope" src="/images/icon-envelope-testimony.svg">
+                      </a>
+                    </h4>
+                  </header>
+
+                  <section class="description sr-anim">
+                    <p class="title-description">{{ ../this.titleDescription }}</p>
+                    {{#each ../this.descriptionTerms }}
+                      <div class="terms">
+                        <p class="terms-title">{{ this.termsTitle }}</p>
+                        <p class="terms-text">{{ this.termsText }}</p>
+                      </div>
+                    {{/each}}
+                  </section>
+
+                  <section class="testimony sr-anim visible-md-block visible-lg-block">
+
+                    <p>
+                      <span>&ldquo;</span>
+                      {{{  ../this.testimony }}}
+                      <span>&rdquo;</span>
+                    </p>
+
+                  </section>
+                </div>
+
+                <div class="col-xs-12 visible-xs-block visible-sm-block _reset-position">
+
+                  <section class="testimony">
+                    <p>
+                      <span>&ldquo;</span>
+                      {{{  ../this.testimony }}}
+                      <span>&rdquo;</span>
+                    </p>
+                  </section>
+
+                </div>
+
+              </article>
+            {{/equal}}
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

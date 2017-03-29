@@ -1,0 +1,72 @@
+{
+  "name": "fe-starter-kit",
+  "version": "1.0.0",
+  "description": "FrontEnd starter kit",
+  "scripts": {
+    "build:prod": "rimraf dist && webpack --env=prod --progress --profile --bail",
+    "build:dev": "rimraf dist && webpack --env=prod --profile --bail",
+    "build:stage": "rimraf dist && webpack --env=stage --profile --bail",
+    "clean:dist": "npm run rimraf -- dist",
+    "config-env": "babel-node ./config/scripts/copy-files.js",
+    "http-server": "http-server",
+    "mockdata": "npm run rimraf ./src/app/global/api/*.js && babel-node config/scripts/create-mockdata.js",
+    "server:dev": "webpack-dev-server --inline  --progress --port 8080  --host 0.0.0.0",
+    "server:prod": "npm run http-server -- ./dist/ -o",
+    "prebuild:dev": "npm run config-env",
+    "prebuild:stage": "npm run config-env -- --env=stage",
+    "prebuild:prod": "npm run config-env -- --env=prod",
+    "prestart": "npm run config-env",
+    "start": "npm run server:dev",
+    "rimraf": "rimraf"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.1",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "chalk": "^1.1.3",
+    "css-loader": "^0.26.1",
+    "ejs": "^2.5.5",
+    "ejs-compiled-loader": "^1.1.0",
+    "extract-text-webpack-plugin": "^2.0.0-rc.0",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "2.26.0",
+    "http-server": "^0.9.0",
+    "json-schema-faker": "^0.4.0",
+    "node-sass": "^4.1.1",
+    "optimize-css-assets-webpack-plugin": "^1.3.0",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-import": "^9.0.0",
+    "postcss-loader": "^1.2.1",
+    "raw-loader": "^0.5.1",
+    "resolve-url-loader": "^1.6.1",
+    "rimraf": "^2.5.2",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1",
+    "to-string-loader": "^1.1.5",
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.2.0",
+    "webpack-md5-hash": "0.0.5",
+    "webpack-merge": "^2.3.1",
+    "yargs": "^6.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malvarezhcr/frontend-starter.git"
+  },
+  "keywords": [
+    "webpack",
+    "SASS"
+  ],
+  "author": "Mariano Alvarez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/malvarezhcr/frontend-starter/issues"
+  },
+  "homepage": "https://github.com/malvarezhcr/frontend-starter#readme"
+}
